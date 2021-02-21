@@ -1,12 +1,17 @@
 {% extends 'blog/base.html' %}
 {% block main %}
     <article class="container-lg post_article">
-        <h2 class="post_title blue_text"><a href="{% url 'post_detail' pk=post.pk %}" class="unstyled_a">{{ post.title }}</a></h2>
-        {% if post.published_date %}
-            <time class="post_time text-muted">Published: {{ post.published_date }}</time>
-        {% else %}
-            <time class="post_time text-muted">Published: Unpublished</time>
+        <h2 class="post_title blue_text"><a href="{% url 'post_detail' pk=post.pk %}"
+                                            class="unstyled_a">{{ post.title }}</a></h2>
+        {% if user.is_authenticated %} }
+            <div><a href="{% url 'post_edit' pk=post.pk %}" class="unstyled_a"><i class="fa fa-edit edit_icon"></i></a>
+            </div>
         {% endif %}
+        <div class="post_time">{% if post.published_date is not None %}
+            <time class="text-muted">Published: {{ post.published_date }}</time>
+        {% else %}
+            <time class="text-muted">Published: Unpublished</time>
+        {% endif %}</div>
         <p class="post_p">{{ post.text|linebreaksbr }}</p>
     </article>
 {% endblock %}
