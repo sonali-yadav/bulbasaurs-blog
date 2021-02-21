@@ -1,0 +1,1 @@
+web: gunicorn bulbasaursblog.wsgi --log-file -
