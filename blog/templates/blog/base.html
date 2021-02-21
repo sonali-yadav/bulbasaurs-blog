@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bulbasaur's Blog</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&family=Secular+One&display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'css/posts.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+<header>
+    <div class="container-lg">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse flexbox" id="navbarTogglerDemo01">
+                    <div><a class="title_a unstyled_a" style="font-size: 3.5vh;" href="#">Bulbasaur's Blog</a></div>
+                    <div>
+                        <ul class="navbar-nav mb-2 mb-lg-0 bolder_text" style="padding-right: 2em;">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">About me</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Self Help</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Blog</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+<main class="container-lg">
+    {% block main %}
+    {% endblock %}
+</main>
+<footer class="flexbox" style="justify-content: space-around">
+    <div class="h3">&copy;All Rights Reserved</div>
+    <div class="h3">
+        <button class="btn btn-lg btn-outline-light">
+            <div class="h4 center_text">Login</div>
+        </button>
+    </div>
+    <div class="h3">Made with &hearts; using html5, css3 & Django</div>
+</footer>
+</body>
+</html>
